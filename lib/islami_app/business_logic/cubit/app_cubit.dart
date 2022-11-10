@@ -49,4 +49,9 @@ class AppCubit extends Cubit<AppStates> {
     currentindex=index;
     emit(AppChangeBottomNavState());
   }
+  int countTasbeeh = 0;
+   masbahaCount(){
+    countTasbeeh++;
+    emit(AppCountMasbahaState(countTasbeeh));
+  }
 }

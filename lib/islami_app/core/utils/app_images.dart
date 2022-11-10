@@ -4,5 +4,6 @@ class AppImages{
   static String hadeth = 'assets/images/hadeth.png';
   static String sebha = 'assets/images/sebha.png';
   static String radio = 'assets/images/radio.png';
+  static String masbaha = 'assets/images/masbaha.png';
 
 }

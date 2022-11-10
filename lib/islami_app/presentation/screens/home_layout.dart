@@ -23,7 +23,10 @@ class HomeLayout extends StatelessWidget {
             )),
             child: Scaffold(
               appBar: AppBar(backgroundColor: Colors.transparent,elevation: 0,
-                title: Text('إسلامى',style: TextStyle(color: AppColors.accentcolor),),
+                title: Text('إسلامي',style: TextStyle(
+                fontSize: 25.0,
+                fontWeight: FontWeight.bold,
+                color: AppColors.accentcolor),),
                 centerTitle: true,),
               backgroundColor: Colors.transparent,
               bottomNavigationBar:Theme(
