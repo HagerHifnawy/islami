@@ -26,7 +26,7 @@ class AppCubit extends Cubit<AppStates> {
     BottomNavigationBarItem(icon:
     ImageIcon(AssetImage
       (AppImages.moshaf)
-    ),label:'مصحف' ,
+    ),label:'القرآن' ,
     ),
     BottomNavigationBarItem(icon:
     ImageIcon(AssetImage

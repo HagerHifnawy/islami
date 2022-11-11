@@ -18,30 +18,39 @@ class HomeLayout extends StatelessWidget {
         AppCubit cubit = AppCubit.get(context);
         return SafeArea(
           child: Container(
-            decoration: BoxDecoration(image: DecorationImage(fit: BoxFit.fill,
-                image: AssetImage(AppImages.defaultBackGround)
-            )),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage(AppImages.defaultBackGround))),
             child: Scaffold(
-              appBar: AppBar(backgroundColor: Colors.transparent,elevation: 0,
-                title: Text('إسلامي',style: TextStyle(
-                fontSize: 25.0,
-                fontWeight: FontWeight.bold,
-                color: AppColors.accentcolor),),
-                centerTitle: true,),
+              appBar: AppBar(
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                title: Text(
+                  'إسلامي',
+                  style: TextStyle(
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.accentcolor),
+                ),
+                centerTitle: true,
+              ),
               backgroundColor: Colors.transparent,
-              bottomNavigationBar:Theme(
-        data: Theme.of(context).copyWith(canvasColor: AppColors.primarycolor),
-              child:BottomNavigationBar(
-                currentIndex: cubit.currentindex,
-                showSelectedLabels: true,
-                showUnselectedLabels: false,
-                selectedItemColor: AppColors.accentcolor,
-                selectedIconTheme: IconThemeData(size: 40),
-                onTap:(index){
-                  cubit.changeNavBar(index);
-                },
-                items:cubit.bottomItems,
-              ),),
+              bottomNavigationBar: Theme(
+                data: Theme.of(context)
+                    .copyWith(canvasColor: AppColors.primarycolor),
+                child: BottomNavigationBar(
+                  currentIndex: cubit.currentindex,
+                  showSelectedLabels: true,
+                  showUnselectedLabels: false,
+                  selectedItemColor: AppColors.accentcolor,
+                  selectedIconTheme: IconThemeData(size: 40),
+                  onTap: (index) {
+                    cubit.changeNavBar(index);
+                  },
+                  items: cubit.bottomItems,
+                ),
+              ),
               body: cubit.screens[cubit.currentindex],
             ),
           ),

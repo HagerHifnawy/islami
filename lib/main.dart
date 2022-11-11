@@ -19,7 +19,10 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => AppCubit(),
       child: MaterialApp(
-        home: HomeLayout(),
+        debugShowCheckedModeBanner: false,
+        home: Directionality(
+            textDirection: TextDirection.rtl,
+            child: HomeLayout()),
       ),
     );
   }

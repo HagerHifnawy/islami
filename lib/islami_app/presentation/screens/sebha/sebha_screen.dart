@@ -39,7 +39,7 @@ class SebhaScreen extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: AppColors.primarycolor,
+            color: AppColors.baigcolor,
           ),
           width: width/6,
           height: height/10,
@@ -57,14 +57,17 @@ class SebhaScreen extends StatelessWidget {
             color: AppColors.primarycolor,
           ),
           width: width/3,
-          height: height/13,
+          height: height/14,
           child: MaterialButton(
             onPressed: () {
               cubit.masbahaCount();
             },
             child: Text(
               "سبحان الله",
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.white),
             ),
           ),
         ),
