@@ -18,11 +18,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AppCubit(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Directionality(
-            textDirection: TextDirection.rtl,
-            child: HomeLayout()),
+      child: BlocConsumer<AppCubit, AppStates>(
+        listener: (context, state) {
+          // TODO: implement listener
+        },
+        builder: (context, state) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: Directionality(
+                textDirection: TextDirection.rtl,
+                child: HomeLayout()),
+          );
+        },
       ),
     );
   }

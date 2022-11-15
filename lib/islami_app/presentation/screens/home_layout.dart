@@ -30,7 +30,7 @@ class HomeLayout extends StatelessWidget {
                   'إسلامي',
                   style: TextStyle(
                       fontSize: 25.0,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w900,
                       color: AppColors.accentcolor),
                 ),
                 centerTitle: true,

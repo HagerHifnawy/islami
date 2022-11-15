@@ -10,24 +10,18 @@ class SebhaScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return BlocConsumer<AppCubit, AppStates>(
-  listener: (context, state) {
-    // TODO: implement listener
-  },
-  builder: (context, state) {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     AppCubit cubit = AppCubit.get(context);
     return Column(
       children: [
         SizedBox(
-          width: width/ 1,
-          height: height/ 2.5,
+          width: width / 1,
+          height: height / 2.5,
           child: Image(image: AssetImage(AppImages.masbaha)),
         ),
         SizedBox(
-          height: height/40,
+          height: height / 40,
         ),
         Text(
           'عدد التسبيحات',
@@ -36,17 +30,23 @@ class SebhaScreen extends StatelessWidget {
         SizedBox(
           height: height / 40,
         ),
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: AppColors.baigcolor,
-          ),
-          width: width/6,
-          height: height/10,
-          child: Center(
-            child: Text('${cubit.countTasbeeh}',
-            style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),),
-          ),
+        BlocBuilder<AppCubit, AppStates>(
+          builder: (context, state) {
+            return Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: AppColors.baigcolor,
+              ),
+              width: width / 6,
+              height: height / 10,
+              child: Center(
+                child: Text(
+                  '${cubit.countTasbeeh}',
+                  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+                ),
+              ),
+            );
+          },
         ),
         SizedBox(
           height: height / 40,
@@ -56,8 +56,8 @@ class SebhaScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(40),
             color: AppColors.primarycolor,
           ),
-          width: width/3,
-          height: height/14,
+          width: width / 3,
+          height: height / 14,
           child: MaterialButton(
             onPressed: () {
               cubit.masbahaCount();
@@ -65,15 +65,13 @@ class SebhaScreen extends StatelessWidget {
             child: Text(
               "سبحان الله",
               style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.white),
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
             ),
           ),
         ),
       ],
     );
-  },
-);
   }
 }
